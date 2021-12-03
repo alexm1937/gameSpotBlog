@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: { id: req.params.id },
-        attributes: ['id', 'title', 'contents', 'user_id', 'genre', 'created_at'],
+        attributes: ['id', 'title', 'contents', 'user_id', 'genre_id', 'created_at'],
         include: [
             {
                 model: Comment,
@@ -62,3 +62,65 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+//create post
+router.post('/', (req, res) => {
+    Post.create({
+        title: req.body.title,
+        contents: req.body.contents,
+        genre_id: req.body.genre_id,
+        user_id: req.session.user_id
+    })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+//update post
+router.put('/:id', (req, res) => {
+    Post.update(
+        {
+            title: req.body.title,
+            contents: req.body.contents,
+            genre_id: req.body.genre_id      
+        },
+        { 
+            where: {id: req.params.id}
+        }
+    )
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({message: 'No post found with this id'});
+            return;
+        }
+        res.json(dbPostData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+//delete post
+router.delete('/:id', (req, res) => {
+    Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
+
+module.exports = router;
