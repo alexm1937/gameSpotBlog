@@ -9,23 +9,42 @@
 
     </head>
     <body>
-    <ol class="post-list">
-        <li>
-        <article class="post">
-        <div class="title">
-            <a href="{{post_url}}" target="_blank">{{title}}</a>
-            <span>({{post_url}})</span>
-        </div>
-        <div class="meta">
-            {{vote_count}} point(s) by {{user.username}} on
-            {{created_at}}
-            |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-        </div>
-    </article>
-  </li>
-</ol>
+    <header>
 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">gameSpotBlog</a>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    {{#if loggedIn}}
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/dashboard">DashBoard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="logout">Logout</a>
+                  </li>
+                  {{else}}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login/SignUp</a>
+                  </li>
+                  {{/if}}
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+    </header>
+
+    <main>
+        {{{ body }}}
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
 
     
