@@ -9,19 +9,22 @@
 
     </head>
     <body>
-        <div class="wrapper">
-            <header>
-                <h1>
-                    <a href="/">Just Tech News</a>
-                </h1>
-            </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            Made by gamers for gamers
-        </footer>
-    </div>
+    <ol class="post-list">
+        <li>
+        <article class="post">
+        <div class="title">
+            <a href="{{post_url}}" target="_blank">{{title}}</a>
+            <span>({{post_url}})</span>
+        </div>
+        <div class="meta">
+            {{vote_count}} point(s) by {{user.username}} on
+            {{created_at}}
+            |
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+        </div>
+    </article>
+  </li>
+</ol>
 
 </body>
 
