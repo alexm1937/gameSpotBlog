@@ -1,4 +1,3 @@
-const sequelize = require('../config/connection');
 const { Genre } = require('../models');
 
 const genredata = [
