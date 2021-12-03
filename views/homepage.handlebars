@@ -1,1 +1,8 @@
-<div>You are on the homepage</div>`
+<ol class="post-list">
+  {{#each posts as |post|}} 
+  <li class="card mt-2" style="width: 90%;">
+    {{>post-part post}}
+    <a href="/post/{{id}}" class="edit-link ms-3 mb-2">{{comments.length}} comment(s)</a>
+  </li>
+  {{/each}}
+</ol>
