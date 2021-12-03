@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 //get all comments
 router.get('/', (req, res) => {
     Comment.findAll({
-        attributes: ['id', 'contents', 'user_id', 'post_id', 'created_at'],
+        attributes: ['id', 'content', 'user_id', 'post_id', 'created_at'],
         order: [['created_at', 'DESC']]
     })
     .then(dbCommentData => res.json(dbCommentData))
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     if(req.session) {
         Comment.create({
-            contents: req.body.contents,
+            content: req.body.content,
             post_id: req.body.post_id,
             user_id: req.session.user_id
         })
