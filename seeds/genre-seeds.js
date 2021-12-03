@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Genre, Post } = require('../models');
+const { Genre } = require('../models');
 
 const genredata = [
     {
@@ -26,4 +26,8 @@ const genredata = [
     {
         genre_name: 'Action-adventure'
     }
-]
+];
+
+const seedGenres = () => Genre.bulkCreate(genredata);
+
+module.exports = seedGenres;
