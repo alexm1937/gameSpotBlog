@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
 
-
+router.use('/api', apiRoutes);
 
 //any other request catch
 router.use((req, res) => {
