@@ -4,21 +4,22 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
 header {
     border-bottom: 2px solid black;
     width: 90%;
     margin: auto;
 }
 
+html,body {
+    min-height: 100vh;
+}
+
 .title:hover {
     filter: brightness(150%);
 }
 
-main {
-    flex: 1 0 auto;
+.box {
+    margin: 10px !important;
+    height: 288px;
+    width: 20%;
 }

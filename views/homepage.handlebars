@@ -1,1 +1,9 @@
-<h1>Hello World</h1>
+{{#each (genre posts) as |genre|}}
+    {{#if genre}}
+        <div class='box is-flex-grow-1'>
+            <p class='has-text-centered	subtitle is-3'>
+                {{genre}}
+            </p>
+        </div>
+    {{/if}}
+{{/each}}

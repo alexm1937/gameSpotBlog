@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}
+class Comment extends Model { }
 
 Comment.init(
     {
@@ -15,7 +15,7 @@ Comment.init(
             allowNull: false,
             validate: {
                 len: [3]
-              }
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -29,9 +29,9 @@ Comment.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-            model: 'post',
-            key: 'id'
-        }
+                model: 'post',
+                key: 'id'
+            }
         }
     },
     {
