@@ -1,27 +1,21 @@
-<form class="newpost-form ">
-    <div class="mx-auto mt-3" style="width: 90%">
-      <div class="mb-3">
-        <label for="post-title" class="form-label">Post Title</label>
-        <input type="post-title" class="form-control" name="post-title">
+<div class="field">
+    <label class="label">Post Title</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Text input">
     </div>
-    <div class="mb-3">
-        <label for="post-contents" class="form-label">Contents</label>
-        <input type="post-contents" class="form-control" name="post-contents">
+  </div>
+  <div class="field">
+    <label class="label">Content</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Textarea"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary" id="signup-btn">Submit Post</button>
+  </div>
+  
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Submit</button>
     </div>
+    <div class="control">
+      <button class="button is-link is-light">Cancel</button>
     </div>
-    </form>
-
-{{#if posts.length}}
-<h3 class='ms-3'>Your Posts</h3>
-<ol class="post-list">
-  {{#each posts as |post|}} 
-  <li class="card mt-2" style="width: 90%;">
-    {{>post-part post}}
-    <a href="/post/{{id}}" class="edit-link ms-3 mb-2">{{comments.length}} comment(s)</a>
-    <a href="/dashboard/edit/{{post.id}}" class="edit-link ms-3 mb-2">Edit post</a>
-  </li>
-  {{/each}}
-</ol>
-{{/if}}
+  </div>
