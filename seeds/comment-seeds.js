@@ -3,13 +3,13 @@ const { Comment } = require('../models');
 const commentdata = [
     {
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        user_id: '1',
-        post_id: '1'
+        user_id: 1,
+        post_id: 1
     },
     {
         content: 'A iaculis at erat pellentesque.',
-        user_id: '2',
-        post_id: '2'
+        user_id: 1,
+        post_id: 1
     },
     {
         content: 'Nunc sed id semper risus in.',
@@ -129,12 +129,12 @@ const commentdata = [
     {
         content: 'Metus vulputate eu scelerisque felis. Enim ut sem viverra aliquet eget sit.',
         user_id: '5',
-        post_id: '28'
+        post_id: '21'
     },
     {
         content: 'Aliquet porttitor lacus luctus accumsan tortor posuere. Viverra tellus in hac habitasse platea dictumst vestibulum. Id eu nisl nunc mi ipsum.',
         user_id: '10',
-        post_id: '27'
+        post_id: '23'
     },
     {
         content: 'Sed odio morbi quis commodo odio aenean sed adipiscing. Dis parturient montes nascetur ridiculus mus mauris vitae.',
@@ -144,12 +144,12 @@ const commentdata = [
     {
         content: 'Urna cursus eget nunc scelerisque viverra. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis.',
         user_id: '8',
-        post_id: '26'
+        post_id: '22'
     },
     {
         content: 'Quam elementum pulvinar etiam non quam lacus suspendisse. Porta non pulvinar neque laoreet suspendisse interdum consectetur libero. Diam vulputate ut pharetra sit amet.',
         user_id: '5',
-        post_id: '27'
+        post_id: '21'
     },
     {
         content: 'In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Viverra adipiscing at in tellus. Dolor purus non enim praesent. Nisi est sit amet facilisis magna etiam tempor orci eu.',
@@ -159,7 +159,7 @@ const commentdata = [
     {
         content: 'Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor.',
         user_id: '2',
-        post_id: '24'
+        post_id: '23'
     },
     {
         content: 'Orci porta non pulvinar neque laoreet suspendisse. At tempor commodo ullamcorper a. Arcu non odio euismod lacinia. Quis enim lobortis scelerisque fermentum dui.',
@@ -174,8 +174,8 @@ const commentdata = [
     {
         content: 'Elementum sagittis vitae et leo. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Malesuada fames ac turpis egestas integer eget. Porta lorem mollis aliquam ut.',
         user_id: '9',
-        post_id: '25'
-    },
+        post_id: '23'
+    }
 ]
 
 const seedComments = () => Comment.bulkCreate(commentdata);

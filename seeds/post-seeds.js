@@ -3,7 +3,7 @@ const { Post } = require('../models');
 const postdata = [
   {
     title: 'Donec posuere metus vitae ipsum.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     user_id: 3,
     genre_id: 1
   },
@@ -39,7 +39,7 @@ const postdata = [
   },
   {
     title: 'In hac habitasse platea dictumst.',
-    content: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+    content: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
     user_id: 10,
     genre_id: 7
   },
@@ -61,9 +61,9 @@ const postdata = [
     user_id: 5,
     genre_id: 4
   },
-  {
+  { 
     title: 'In hac habitasse platea dictumst.',
-    content: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.',
+    content: 'lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus felis eu vulputate vulputate.',
     user_id: 3,
     genre_id: 2
   },
@@ -111,7 +111,7 @@ const postdata = [
   },
   {
     title: 'Nulla ut erat id mauris vulputate elementum.',
-    content: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
+    content: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea?',
     user_id: 6,
     genre_id: 6
   },
@@ -125,7 +125,7 @@ const postdata = [
     title: 'which of us ever undertakes laborious physical exercise, except to obtain some advantage from it?',
     content: 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.',
     user_id: 7,
-    genre_id: 10
+    genre_id: 8
   },
   {
     title: 'No one rejects, dislikes, or avoids pleasure itself',
