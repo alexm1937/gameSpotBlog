@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'content',
-            'created_at'
+            'created_at',
+            'updated_at'
         ],
         include: [
             {
@@ -17,18 +18,11 @@ router.get('/', (req, res) => {
             },
             {
                 model: Genre
-            },
-            {
-                model: Comment,
-                attributes: ['id', 'content', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
             }
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
+        //console.error(posts)
         res.render('homepage', {
             posts
         });

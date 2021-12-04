@@ -4,6 +4,16 @@
             <p class='has-text-centered	subtitle is-3'>
                 {{genre}}
             </p>
+
+            {{#each (post_summary ../posts genre) as |details|}}
+                <p class='subtitle is-5'>
+                    {{details.[0]}} <br>
+                    <span class='subtitle is-6'>
+                        Author: {{details.[1]}}, 
+                        Edited: {{format_date details.[2]}}
+                    </span>
+                </p>
+            {{/each}}
         </div>
     {{/if}}
 {{/each}}

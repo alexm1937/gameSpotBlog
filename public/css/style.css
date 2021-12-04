@@ -20,6 +20,6 @@ html,body {
 
 .box {
     margin: 10px !important;
-    height: 288px;
+    min-height: 288px;
     width: 20%;
 }
