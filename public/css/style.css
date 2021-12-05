@@ -50,3 +50,7 @@ html,body {
     max-height: 587px;
     overflow-y: auto;
 }
+
+.new-post-form {
+    width: 50%;
+}

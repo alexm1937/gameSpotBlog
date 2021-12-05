@@ -33,8 +33,6 @@ router.get('/', withAuth, (req, res) => {
     }).then(data => {
         // Serializes data before passing to template.
         const posts = data.map(post => post.get({ plain: true }));
-        console.log(posts[0].user.id)
-        console.log(req.session.user_id)
         res.render('dashboard', { posts, loggedIn: true, user_id: req.session.user_id });
     }).catch(err => {
         console.log(err);

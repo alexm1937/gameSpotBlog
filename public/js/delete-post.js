@@ -2,7 +2,6 @@ const forms = document.querySelector('.post-collection').addEventListener('click
 
 async function deleteFormHandler(event) {
 	event.preventDefault();
-    console.log()
 
     if (event.target.getAttribute('data-post-id')) {
         const id = event.target.getAttribute('data-post-id');

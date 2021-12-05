@@ -21,7 +21,6 @@ router.get('/', (req, res) => {
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
-        //console.log(posts)
         res.render('homepage', {
             posts,
             loggedIn: req.session.loggedIn
@@ -61,14 +60,13 @@ router.get('/category/:id', (req, res) => {
             }
         ]
     }).then(data => {
-        console.log(data)
         if (data.length === 0) {
             res.status(404).json({ message: 'No category found with this id' });
             return;
         }
 
         const posts = data.map(post => post.get({ plain: true}));
-        console.log(posts)
+       
         res.render('category', {
             posts,
             loggedIn: req.session.loggedIn,
