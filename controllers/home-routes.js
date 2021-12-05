@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { User, Genre, Post, Comment } = require('../models');
 
 router.get('/', (req, res) => {
@@ -70,7 +69,8 @@ router.get('/category/:id', (req, res) => {
         const posts = data.map(post => post.get({ plain: true}));
         console.log(posts)
         res.render('category', {
-            posts
+            posts,
+            loggedIn: req.session.loggedIn
         });
     }).catch(err => {
         console.log(err);

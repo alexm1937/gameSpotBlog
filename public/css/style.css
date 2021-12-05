@@ -12,6 +12,7 @@ header {
 
 html,body {
     min-height: 100vh;
+    background: snow;
 }
 
 .title:hover {
@@ -39,4 +40,8 @@ html,body {
 
 .btn-no-style:hover {
     cursor: pointer;
+}
+
+.textarea {
+    height: 100%;
 }
