@@ -1,4 +1,4 @@
-{{#each this as |post|}}
+{{#each posts as |post|}}
     {{#if comments}}
 <div class="post-container box mb-3 mt-3">
     {{else}}
@@ -8,7 +8,20 @@
         <p class="subtitle is-5 mb-3">{{title}} <span class='subtitle is-6'> - Author: {{user.username}},
                 Created: {{ format_date created_at}}</span></p>
         <p>{{content}}</p> <br>
-        <a href="/post/{{post.id}}">Comment</a>
+        
+        {{#if ../loggedIn}}
+            <p >
+                <form class='delete-post-form is-flex is-justify-content-space-between'>
+                <a href="/post/{{post.id}}">Comment</a>
+                    {{#if (my_post post ../user_id)}}
+                    <button type='submit' data-post-id={{post.id}} class='has-text-danger btn-no-style is-size-6'>
+                        Delete
+                    </button>
+                </form>
+                    {{/if}}
+            </p>
+        {{/if}}
+        
     </div>
 
     {{#if comments}}
@@ -21,3 +34,5 @@
     {{/if}}
 </div>
 {{/each}}
+
+<script src="/js/delete-post.js"></script>

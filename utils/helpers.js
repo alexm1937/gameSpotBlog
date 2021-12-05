@@ -36,5 +36,8 @@ module.exports = {
 			}
 		}
 		return postList;
+	},
+	my_post: (post, user_id) => {
+		return post.user.id === user_id
 	}
 }

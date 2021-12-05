@@ -46,7 +46,7 @@ router.get('/category/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['id', 'username']
             },
             {
                 model: Genre
@@ -71,7 +71,8 @@ router.get('/category/:id', (req, res) => {
         console.log(posts)
         res.render('category', {
             posts,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user_id
         });
     }).catch(err => {
         console.log(err);
