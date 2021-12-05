@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Spot Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="is-flex is-flex-direction-column">
+    <header class="is-flex is-justify-content-space-between is-align-items-center p-3">
+        <h1>
+            <a class="title is-1 m-3" href="/">Game Spot Blog</a>
+        </h1>
+        <nav>
+            {{#if loggedIn}}
+            <a href="/dashboard">dashboard</a>
+            <button id="logout" class="btn-no-style">logout</button>
+            {{else}}
+            <a class="title m-3" href="/login">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main class="is-flex is-justify-content-center is-justify-content-space-around 
+        is-flex-wrap-wrap is-flex-grow-1">
+        {{{ body }}}
+    </main>
+
+    <footer class="is-flex is-justify-content-space-between is-align-items-center has-background-primary has-text-black">
+        <p class="is-inline is-size-4 m-3">Made by Game Spot Blog.</p>
+        <p class="is-inline is-size-5 m-3">© 2021 Game Spot Blog, Inc.</p>
+    </footer>
+
+    {{#if loggedIn}}
+    {{!--
+    <script src="/javascript/logout.js"></script> --}}
+    {{/if}}
+</body>
+
 </html>

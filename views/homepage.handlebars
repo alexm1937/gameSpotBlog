@@ -1,0 +1,16 @@
+{{#each (genre posts) as |genre|}}
+    {{#if genre}}
+        <div class='box is-flex-grow-1 category-container'>
+            <a href='/category/{{genre.[0]}}' class='subtitle is-3 is-block'>{{genre.[1]}}</a>
+
+            {{#each (post_summary ../posts genre.[1]) as |details|}}
+                <p class='subtitle is-5'>
+                    {{details.[0]}} <br>
+                    <span class='subtitle is-6'>
+                        Author: {{details.[1]}}, Created: {{format_date details.[2]}}
+                    </span>
+                </p>
+            {{/each}}
+        </div>
+    {{/if}}
+{{/each}}
