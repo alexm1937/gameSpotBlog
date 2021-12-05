@@ -42,7 +42,9 @@ async function newFormHandler(event) {
         }
     });
 
-    if (!postResponse.ok) {
-        alert(genreResponse.statusText);
+    if (postResponse.ok) {
+        document.location.reload();
+    } else {
+        alert(postResponse.statusText);
     }
 }

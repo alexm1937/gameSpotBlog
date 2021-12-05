@@ -45,3 +45,8 @@ html,body {
 .textarea {
     height: 100%;
 }
+
+.post-collection {
+    max-height: 587px;
+    overflow-y: auto;
+}
