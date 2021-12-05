@@ -8,8 +8,7 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'content',
-            'created_at',
-            'updated_at'
+            'created_at'
         ],
         include: [
             {
@@ -22,7 +21,7 @@ router.get('/', (req, res) => {
         ]
     }).then(data => {
         const posts = data.map(post => post.get({ plain: true }));
-        //console.error(posts)
+        //console.log(posts)
         res.render('homepage', {
             posts
         });
@@ -31,5 +30,51 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+router.get('/category/:id', (req, res) => {
+    Post.findAll({
+        where: {
+            genre_id: req.params.id
+        },
+        attributes: [
+            'id',
+            'title',
+            'content',
+            'created_at'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Genre
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'content', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            }
+        ]
+    }).then(data => {
+        console.log(data)
+        if (data.length === 0) {
+            res.status(404).json({ message: 'No category found with this id' });
+            return;
+        }
+
+        const posts = data.map(post => post.get({ plain: true}));
+        console.log(posts)
+        res.render('category', {
+            posts
+        });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
 
 module.exports = router;

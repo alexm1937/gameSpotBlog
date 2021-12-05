@@ -18,8 +18,12 @@ html,body {
     filter: brightness(150%);
 }
 
-.box {
+.category-container {
     margin: 10px !important;
     min-height: 288px;
     width: 20%;
+}
+
+.post-container {
+    width: 80%;
 }
