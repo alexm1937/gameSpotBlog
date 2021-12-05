@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Spot Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" 
+        integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -16,8 +19,8 @@
         </h1>
         <nav>
             {{#if loggedIn}}
-            <a href="/dashboard">dashboard</a>
-            <button id="logout" class="btn-no-style">logout</button>
+            <a href="/dashboard" class='title m-3'>Dashboard</a>
+            <button id="logout" class="btn-no-style title m-3">Logout</button>
             {{else}}
             <a class="title m-3" href="/login">Login</a>
             {{/if}}
@@ -35,8 +38,7 @@
     </footer>
 
     {{#if loggedIn}}
-    {{!--
-    <script src="/javascript/logout.js"></script> --}}
+        <script src="/js/logout.js"></script>
     {{/if}}
 </body>
 

@@ -27,3 +27,16 @@ html,body {
 .post-container {
     width: 80%;
 }
+
+.form-container {
+    height: min-content;
+}
+
+.btn-no-style {
+    border: none;
+    background: transparent;
+}
+
+.btn-no-style:hover {
+    cursor: pointer;
+}
