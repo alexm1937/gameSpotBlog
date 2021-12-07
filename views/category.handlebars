@@ -1,19 +1,4 @@
-{{#each posts as |post|}}
-<div class="post-container box">
-    <div class='box'>
-        <p class="subtitle is-5 mb-3">{{post.title}} <span class='subtitle is-6'> - Author: {{post.user.username}},
-                Created: {{ format_date post.created_at}}</span></p>
-        <p>{{post.content}}</p>
-    </div>
+{{> comment-list this}}
 
-    <p class="subtitle is-5 mb-3">Comments</p>
-    <div>
-        {{#each post.comments as |comment|}}
-        <p class='box'>{{comment.content}} <br> - Author: {{comment.user.username}}, Created:{{format_date comment.created_at}}</p>
-        {{/each}}
-    </div>
-</div>
-
-{{/each}}
 
 {{!-- posts.[0].comments.[0].id --}}

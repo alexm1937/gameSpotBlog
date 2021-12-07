@@ -31,10 +31,13 @@ module.exports = {
 		const postList = [];
 		for (i = 0; i < posts.length; i++) {
 			if (posts[i].genre.genre_name.toLowerCase() === genre.toLowerCase() && postList.length < 5) {
-				let temp = [posts[i].title, posts[i].user.username, posts[i].created_at]
+				let temp = [posts[i].id, posts[i].title, posts[i].user.username, posts[i].created_at]
 				postList.push(temp);
 			}
 		}
 		return postList;
+	},
+	my_post: (post, user_id) => {
+		return post.user.id === user_id
 	}
 }
