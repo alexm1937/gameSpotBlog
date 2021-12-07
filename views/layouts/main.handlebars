@@ -1,83 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>gameSpotBlog</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
-    </head>
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="/">
-                game<has-text-black-bis>Spot</has-black-bis>Blog
-              </a>
-          
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-           
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
-                  DashBoard
-                </a>
-    
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    Genres
-                  </a>
-          
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                      First Person Shooter
-                    </a>
-                    <a class="navbar-item">
-                      Fighter
-                    </a>
-                    <a class="navbar-item">
-                      RPG
-                    </a>
-                    <a class="navbar-item">
-                        Horror
-                    </a>
-                    <a class="navbar-item">
-                        Racing
-                    </a>
-                  </div>
-                </div>
-              </div>
-          
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-dark">
-                      <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                      Log in
-                    </a>
-                  </div>
-                </div>
-              </div>
-          </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Spot Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="is-flex is-flex-direction-column">
+    <header class="is-flex is-justify-content-space-between is-align-items-center p-3">
+        <h1>
+            <a class="title is-1 m-3" href="/">Game Spot Blog</a>
+        </h1>
+        <nav>
+            {{#if loggedIn}}
+            <a href="/dashboard">dashboard</a>
+            <button id="logout" class="btn-no-style">logout</button>
+            {{else}}
+            <a class="title m-3" href="/login">Login</a>
+            {{/if}}
+        </nav>
     </header>
-    <body>
-  
 
-    <main>
-        
+    <main class="is-flex is-justify-content-center is-justify-content-space-around 
+        is-flex-wrap-wrap is-flex-grow-1">
+        {{{ body }}}
     </main>
 
-    <footer>
-
+    <footer class="is-flex is-justify-content-space-between is-align-items-center has-background-primary has-text-black">
+        <p class="is-inline is-size-4 m-3">Made by Game Spot Blog.</p>
+        <p class="is-inline is-size-5 m-3">© 2021 Game Spot Blog, Inc.</p>
     </footer>
+
+    {{#if loggedIn}}
+    {{!--
+    <script src="/javascript/logout.js"></script> --}}
+    {{/if}}
 </body>
 
-    
 </html>
