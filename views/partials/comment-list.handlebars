@@ -1,0 +1,36 @@
+{{#each posts as |post|}}
+    {{#if comments}}
+<div class="post-container box mb-3 mt-3">
+    {{else}}
+<div class="post-container mb-3 mt-3">
+    {{/if}}
+    <div class='box'>
+        <p class="subtitle is-5 mb-3">{{title}} <span class='subtitle is-6'> - Author: {{user.username}},
+                Created: {{ format_date created_at}}</span></p>
+        <p>{{content}}</p> <br>
+        
+        {{#if ../loggedIn}}
+            <p >
+                <form class='delete-post-form is-flex is-justify-content-space-between'>
+                <a href="/post/{{post.id}}">Comment</a>
+                    {{#if (my_post post ../user_id)}}
+                    <button type='submit' data-post-id={{post.id}} class='has-text-danger btn-no-style is-size-6'>
+                        Delete
+                    </button>
+                </form>
+                    {{/if}}
+            </p>
+        {{/if}}
+        
+    </div>
+
+    {{#if comments}}
+        <p class="subtitle is-5 mb-3">Comments</p>
+        <div>
+            {{#each comments as |comment|}}
+            <p class='box'>{{comment.content}} <br> - Author: {{comment.user.username}}, Created:{{format_date comment.created_at}}</p>
+            {{/each}}
+        </div>
+    {{/if}}
+</div>
+{{/each}}

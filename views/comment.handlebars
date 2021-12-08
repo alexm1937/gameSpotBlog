@@ -1,0 +1,35 @@
+<div class='post-container mb-3 mt-3 is-flex is-flex-direction-column'>
+    <div class='box'>
+        <p class="subtitle is-5 mb-3">{{post.title}} <span class='subtitle is-6'> - Author: {{post.user.username}},
+                Created: {{ format_date post.created_at}}</span></p>
+        <p>{{post.content}}</p>
+    </div>
+
+    <form class='comment-form box is-flex is-flex-grow-1 is-flex-direction-column'>
+        <p class='title'>Comment</p>
+
+        <div class="field is-flex-grow-1">
+            <textarea class="textarea" name='post-text' placeholder="Text"></textarea>
+        </div>
+
+        <div class="field">
+            <p class="control">
+                <button type='submit' class="button is-success">
+                    Submit
+                </button>
+            </p>
+        </div>
+    </form>
+
+
+    {{#if post.comments}}
+        <p class="subtitle is-5 mb-3">Comments</p>
+        <div>
+            {{#each post.comments as |comment|}}
+            <p class='box'>{{comment.content}} <br> - Author: {{comment.user.username}}, Created:{{format_date comment.created_at}}</p>
+            {{/each}}
+        </div>
+    {{/if}}
+</div>
+
+<script src="/js/comment.js"></script>

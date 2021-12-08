@@ -6,7 +6,9 @@ const sequelize = require('./config/connection');//connection to mysql server
 const session = require('express-session');//cookies and session management
 const SequelizeStore = require('connect-session-sequelize')(session.Store);// cookies/session storage to mysql
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 //set app and /startserver 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -26,14 +28,14 @@ app.set('view engine', 'handlebars'); //sets handlebars as view engine
 
 //middleware
 app.use(express.json()); // expect incoming json
-app.use(express.urlencoded({extended: true})); //look for nested data
+app.use(express.urlencoded({ extended: true })); //look for nested data
 app.use(express.static(path.join(__dirname, 'public')));//make public folder accessible 
 
 //starts routes
 app.use(routes);
 
 //turn on server connect to db
-sequelize.sync({force: false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
 
