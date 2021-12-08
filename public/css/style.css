@@ -8,11 +8,11 @@ header {
     border-bottom: 2px solid black;
     width: 90%;
     margin: auto;
+    justify-content: flex-end;
 }
 
 html,body {
     min-height: 100vh;
-    background: snow;
 }
 
 .title:hover {
@@ -21,13 +21,17 @@ html,body {
 
 .category-container {
     margin: 10px !important;
-    min-height: 288px;
-    width: 20%;
+    width: 21rem;
 }
 
 .post-container {
-    width: 80%;
+    width: 90%;
 }
+
+.post-container > * {
+    width: 100%;
+}
+
 
 .form-container {
     height: min-content;
@@ -38,7 +42,7 @@ html,body {
     background: transparent;
 }
 
-.btn-no-style:hover {
+.btn-no-style:hover, .dropdown-item:hover{
     cursor: pointer;
 }
 
@@ -47,10 +51,39 @@ html,body {
 }
 
 .post-collection {
-    max-height: 587px;
+    max-height: 77vh;
+    width: 30rem;
     overflow-y: auto;
 }
 
 .new-post-form {
-    width: 50%;
+    width: 30rem;
+    max-height: 77vh;
+}
+
+.post-background {
+    background: palegreen;
+}
+
+
+.dropdown-content {
+    height: 178px;
+    overflow-y: auto;
+}
+
+.dropdown-item:hover {
+    background: whitesmoke;
+}
+
+@media screen and (max-width: 1023px) {
+    header {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .category-container {
+        width: 100%;
+    }
 }
