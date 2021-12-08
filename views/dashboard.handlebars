@@ -1,32 +1,31 @@
-<div class='is-flex is-flex-grow-1'>
-    <form class='new-post-form box m-3 is-flex is-flex-grow-1 is-flex-direction-column'>
-        <p class='title'>Create Post</p>
-        <div class="field">
-            <input class="input" name='post-title' type="text" placeholder="Title">
-        </div>
 
-        <div class="field">
-            <input class="input" name='post-genre' type="text" placeholder="Genre">
-        </div>
-
-        <div class="field is-flex-grow-1">
-            <textarea class="textarea" name='post-text' placeholder="Text"></textarea>
-        </div>
-
-        <div class="field">
-            <p class="control">
-                <button type='submit' class="button is-success">
-                    Submit
-                </button>
-            </p>
-        </div>
-    </form>
-
-    <div class='post-collection post-list box m-3 is-flex is-flex-direction-column is-flex-grow-1 is-align-items-center'>
-        <p class='title'>Your Posts</p>
-        {{> comment-list this}}
+<form class='new-post-form box m-3 is-flex is-flex-grow-1 is-flex-direction-column post-background'>
+    <p class='title'>Create Post</p>
+    <div class="field">
+        <input class="input" name='post-title' type="text" placeholder="Title">
     </div>
+
+    <div class="field">
+        <input class="input" name='post-genre' type="text" placeholder="Genre">
+    </div>
+
+    <div class="field is-flex-grow-1">
+        <textarea class="textarea" name='post-text' placeholder="Text"></textarea>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <button type='submit' class="button is-success">
+                Submit
+            </button>
+        </p>
+    </div>
+</form>
+
+<div class='post-collection post-list box m-3 is-flex is-flex-direction-column is-flex-grow-1 is-align-items-center post-background'>
+    <p class='title'>Your Posts</p>
+    {{> comment-list this}}
 </div>
 
+
 <script src="/js/add-post.js"></script>
-<script src="/js/delete-post.js"></script>

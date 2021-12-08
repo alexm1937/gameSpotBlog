@@ -12,7 +12,6 @@ header {
 
 html,body {
     min-height: 100vh;
-    background: snow;
 }
 
 .title:hover {
@@ -26,8 +25,14 @@ html,body {
 }
 
 .post-container {
-    width: 80%;
+    width: 90%;
+    
 }
+
+.post-container > * {
+    width: 100%;
+}
+
 
 .form-container {
     height: min-content;
@@ -47,10 +52,16 @@ html,body {
 }
 
 .post-collection {
-    max-height: 587px;
+    max-height: 77vh;
+    width: 50%;
     overflow-y: auto;
 }
 
 .new-post-form {
     width: 50%;
+    max-height: 77vh;
+}
+
+.post-background {
+    background: palegreen;
 }

@@ -2,7 +2,7 @@ document.querySelector('.new-post-form').addEventListener('submit', newFormHandl
 
 async function newFormHandler(event) {
     event.preventDefault();
-
+    
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const content = document.querySelector('textarea[name="post-text"]').value.trim();
     const genre = document.querySelector('input[name="post-genre"]').value.trim();
