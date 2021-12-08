@@ -12,6 +12,7 @@ header {
 
 html,body {
     min-height: 100vh;
+    background: snow;
 }
 
 .title:hover {
@@ -26,4 +27,30 @@ html,body {
 
 .post-container {
     width: 80%;
+}
+
+.form-container {
+    height: min-content;
+}
+
+.btn-no-style {
+    border: none;
+    background: transparent;
+}
+
+.btn-no-style:hover {
+    cursor: pointer;
+}
+
+.textarea {
+    height: 100%;
+}
+
+.post-collection {
+    max-height: 587px;
+    overflow-y: auto;
+}
+
+.new-post-form {
+    width: 50%;
 }

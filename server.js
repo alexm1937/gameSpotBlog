@@ -22,7 +22,7 @@ const sess = {
         db: sequelize
     })
 };
-//app.use(session(sess));
+app.use(session(sess));
 app.engine('handlebars', hbs.engine); //tell express start handlebars eng
 app.set('view engine', 'handlebars'); //sets handlebars as view engine
 

@@ -1,29 +1,65 @@
-<form class="login-form">
-     <div class="mx-auto mt-3" style="width: 50%">
-    <h3> Sign In:</h3> 
-    <div class="mb-3">
-        <label for="username-form" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username-form">
-    </div>
-    <div class="mb-3">
-        <label for="password-form" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password-form">
-    </div>
-    <button type="submit" class="btn btn-primary" id="login-btn">LogIn</button>
-    </form>
+<div class='is-flex is-align-items-center'>
+    <div class='is-flex is-flex-direction-column is-justify-content-center box form-container'>
+        <form class='login-form box m-3'>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input id='email-login' class="input" type="email" placeholder="Email">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input id='password-login' class="input" type="text" placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button type='submit' class="button is-success">
+                        Login
+                    </button>
+                </p>
+            </div>
+        </form>
 
-    <h3 class="mt-3"> Or sign up below!</h3>
+        <form class='signup-form box m-3'>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input id='username-signup' class="input" type="text" placeholder="Username">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input id='email-signup' class="input" type="email" placeholder="Email">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input id='password-signup' class="input" type="text" placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button type='submit' class="button is-success">
+                        Signup
+                    </button>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
 
-    <form class="signup-form">
-    <div class="mb-3">
-        <label for="username-signup" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username-signup">
-    </div>
-    <div class="mb-3">
-        <label for="password-signup" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password-signup">
-    </div>
-    <button type="submit" class="btn btn-primary" id="signup-btn">Sign Up</button>
-    </div>
-    </form>
-    
+<script src="/js/login.js"></script>
