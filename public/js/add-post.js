@@ -23,7 +23,7 @@ async function newFormHandler(event) {
     const content = document.querySelector('textarea[name="post-text"]').value.trim();
     const genre_id = genre.getAttribute('data-genre-id');
     
-    if (title && content && id) {
+    if (title && content && genre_id) {
         // Adds a post.
         const postResponse = await fetch(`/api/posts`, {
             method: 'POST',
@@ -38,7 +38,7 @@ async function newFormHandler(event) {
         });
 
         if (postResponse.ok) {
-            //document.location.reload();
+            document.location.reload();
         } else {
             alert(postResponse.statusText);
         }
