@@ -1,32 +1,48 @@
-<div class='is-flex is-flex-grow-1'>
-    <form class='new-post-form box m-3 is-flex is-flex-grow-1 is-flex-direction-column'>
-        <p class='title'>Create Post</p>
-        <div class="field">
-            <input class="input" name='post-title' type="text" placeholder="Title">
-        </div>
 
-        <div class="field">
-            <input class="input" name='post-genre' type="text" placeholder="Genre">
-        </div>
+<form class='new-post-form box m-3 is-flex is-flex-grow-1 is-flex-direction-column post-background'>
+    <p class='title'>Create Post</p>
+    <div class="field is-flex">
+        <input class="input post-title mr-2" name='post-title' type="text" placeholder="Title">
 
-        <div class="field is-flex-grow-1">
-            <textarea class="textarea" name='post-text' placeholder="Text"></textarea>
-        </div>
-
-        <div class="field">
-            <p class="control">
-                <button type='submit' class="button is-success">
-                    Submit
+        <div class="dropdown">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span class='genre'>Genre</span>
+                <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
                 </button>
-            </p>
-        </div>
-    </form>
+            </div>
 
-    <div class='post-collection post-list box m-3 is-flex is-flex-direction-column is-flex-grow-1 is-align-items-center'>
-        <p class='title'>Your Posts</p>
-        {{> comment-list this}}
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                    {{#each genres as |genre|}}
+                    <p class='dropdown-item' data-genre-id='{{genre.id}}'>
+                        {{genre.genre_name}}
+                    </p>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="field is-flex-grow-1">
+        <textarea class="textarea" name='post-text' placeholder="Text"></textarea>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <button type='submit' class="button is-success">
+                Submit
+            </button>
+        </p>
+    </div>
+</form>
+
+<div class='post-collection post-list box m-3 is-flex is-flex-direction-column is-flex-grow-1 is-align-items-center post-background'>
+    <p class='title'>Your Posts</p>
+    {{> comment-list this}}
 </div>
 
+
 <script src="/js/add-post.js"></script>
-<script src="/js/delete-post.js"></script>
