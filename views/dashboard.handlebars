@@ -1,12 +1,29 @@
 
 <form class='new-post-form box m-3 is-flex is-flex-grow-1 is-flex-direction-column post-background'>
     <p class='title'>Create Post</p>
-    <div class="field">
-        <input class="input" name='post-title' type="text" placeholder="Title">
-    </div>
+    <div class="field is-flex">
+        <input class="input post-title mr-2" name='post-title' type="text" placeholder="Title">
 
-    <div class="field">
-        <input class="input" name='post-genre' type="text" placeholder="Genre">
+        <div class="dropdown">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span class='genre'>Genre</span>
+                <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+                </button>
+            </div>
+
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                    {{#each genres as |genre|}}
+                    <p class='dropdown-item' data-genre-id='{{genre.id}}'>
+                        {{genre.genre_name}}
+                    </p>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="field is-flex-grow-1">
