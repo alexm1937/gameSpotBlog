@@ -54,7 +54,7 @@ There are no tests for this application.
 
 <br>
 
-[JacobRyanHanson] (https://github.com/JacobRyanHanson)
+[jacobryanhanson] (https://github.com/JacobRyanHanson)
 
 <br>
 
