@@ -54,7 +54,7 @@ There are no tests for this application.
 
 <br>
 
-[jacobryanhanson] (https://github.com/JacobRyanHanson)
+<a href = "https://github.com/JacobRyanHanson">JacobRyanHanson</a>
 
 <br>
 
