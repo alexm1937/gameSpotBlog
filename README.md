@@ -47,8 +47,17 @@ There are no tests for this application.
 
 ## Contributors
 [alexm1937](https://github.com/alexm1937)
+
+<br>
+
 [alexchristianson](https://github.com/alexchristianson)
+
+<br>
+
 [JacobRyanHanson] (https://github.com/JacobRyanHanson)
+
+<br>
+
 [ethanfregien2233](https://github.com/ethanfregien2233)
 
 
