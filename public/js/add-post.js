@@ -1,50 +1,49 @@
+const dropdown = document.querySelector('.dropdown')
+const genre = dropdown.querySelector('.genre')
+dropdown.addEventListener('click', newDropdownHandler);
+
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+
+async function newDropdownHandler(event) {
+    event.preventDefault();
+
+    dropdown.setAttribute('class', 'dropdown is-active')
+    if(event.target.getAttribute('data-genre-id')) {
+        dropdown.setAttribute('class', 'dropdown')
+        genre.setAttribute('data-genre-id', event.target.getAttribute('data-genre-id'))
+        genre.textContent = event.target.textContent;
+    }
+}
+
 
 async function newFormHandler(event) {
     event.preventDefault();
-
+    
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const content = document.querySelector('textarea[name="post-text"]').value.trim();
-    const genre = document.querySelector('input[name="post-genre"]').value.trim();
+    const genre_id = genre.getAttribute('data-genre-id');
     
-
-    const genreResponse = await fetch(`/api/genres`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then((res) => {
-        if (!res.ok) {
-			return alert(`Error: ${res.statusText}`);
-		}
-		return res.json();
-    });
-
-    const genre_id = getId();
-    
-    function getId() {
-        for (i = 0; i < genreResponse.length; i++) {
-            if (genre.toLowerCase() === genreResponse[i].genre_name.toLowerCase()) {
-                return genreResponse[i].id;
+    if (title && content && genre_id) {
+        // Adds a post.
+        const postResponse = await fetch(`/api/posts`, {
+            method: 'POST',
+            body: JSON.stringify({
+                title,
+                content,
+                genre_id
+            }),
+            headers: {
+                'Content-Type': 'application/json'
             }
-        }
-    }
-    // Adds a post.
-    const postResponse = await fetch(`/api/posts`, {
-        method: 'POST',
-        body: JSON.stringify({
-            title,
-            content,
-            genre_id
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
+        });
 
-    if (postResponse.ok) {
-        document.location.reload();
+        if (postResponse.ok) {
+            document.location.reload();
+        } else {
+            alert(postResponse.statusText);
+        }
     } else {
-        alert(postResponse.statusText);
+        alert("Please fill all fields.")
     }
 }
+

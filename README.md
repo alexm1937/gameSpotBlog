@@ -2,7 +2,7 @@
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Description 
-
+GameSpotBlog is a gaming blog designed by gamers, for gamers. This site allows users to view and submit posts about their favorite video games into some of the most popular gaming genres specified. Users can also comment on other peoples posts, as well as view their own personalized dashboard listing all of their posts upon creating an account and signing in.
 ## Table of Contents
 * [Installation](#installation)
 * [Demonstration](#Demonstration)
@@ -33,8 +33,11 @@
 * Run the app
      - `npm start` [To start the server] and navigate to <http://localhost:3001/> in your browser OR Use Insomnia Core
 
-## Demonstration 
-
+* [LiveHerokuLink] (https://tranquil-tor-89831.herokuapp.com/)
+## Screenshots
+<img src= /resources/srn1.jpg>
+<img src= /resources/srn2.jpg>
+<img src= /resources/srn3.jpg>
 
 ## License 
 This project is licensed under ISC
@@ -43,5 +46,18 @@ This project is licensed under ISC
 There are no tests for this application.
 
 ## Contributors
+[alexm1937](https://github.com/alexm1937)
 
-## Questions
+<br>
+
+[alexchristianson](https://github.com/alexchristianson)
+
+<br>
+
+<a href = "https://github.com/JacobRyanHanson">JacobRyanHanson</a>
+
+<br>
+
+[ethanfregien2233](https://github.com/ethanfregien2233)
+
+

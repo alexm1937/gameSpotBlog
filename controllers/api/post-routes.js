@@ -80,11 +80,14 @@ router.post('/', withAuth, (req, res) => {
 
 //update post
 router.put('/:id', withAuth, (req, res) => {
+    console.log("Hit Edit Route");
+    console.log(req.body);
+
     Post.update(
         {
             title: req.body.title,
             content: req.body.content,
-            genre_id: req.body.genre_id      
+            genre_id: req.body.genre    
         },
         { 
             where: {id: req.params.id}
@@ -105,6 +108,7 @@ router.put('/:id', withAuth, (req, res) => {
 
 //delete post
 router.delete('/:id', withAuth, (req, res) => {
+    console.log("Hit Delete Route");
     Post.destroy({
       where: {
         id: req.params.id
