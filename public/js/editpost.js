@@ -1,3 +1,13 @@
+async function newDropdownHandler(event) {
+    event.preventDefault();
+
+    dropdown.setAttribute('class', 'dropdown is-active')
+    if(event.target.getAttribute('data-genre-id')) {
+        dropdown.setAttribute('class', 'dropdown')
+        genre.setAttribute('data-genre-id', event.target.getAttribute('data-genre-id'))
+        genre.textContent = event.target.textContent;
+    }
+}
 
 async function editFormHandler(event) {
     event.preventDefault();
@@ -19,7 +29,7 @@ async function editFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard/');
+      document.location.replace({{post.content}});
     } else {
       alert(response.statusText);
     }
