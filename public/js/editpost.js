@@ -13,7 +13,7 @@ async function editFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="post-title"]').value;
-    const contents = document.querySelector('input[name="post-contents"]').value;
+    const contents = document.querySelector('input[name="post-content"]').value;
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -32,6 +32,11 @@ async function editFormHandler(event) {
       document.location.replace('/dashboard/');
     } else {
       alert(response.statusText);
+    }
+    if (response.ok) {
+        document.location.reload();
+    } else {
+        alert(response.statusText);
     }
   }
   
