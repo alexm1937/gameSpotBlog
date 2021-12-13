@@ -80,10 +80,12 @@ router.post('/', withAuth, (req, res) => {
 
 //update post
 router.put('/:id', withAuth, (req, res) => {
+    console.log(req.body)
+
     Post.update(
         {
             title: req.body.title,
-            content: req.body.content,
+            content: req.body.contents,
             genre_id: req.body.genre_id      
         },
         { 
