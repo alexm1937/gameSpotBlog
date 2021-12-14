@@ -50,4 +50,4 @@ async function editFormHandler(event) {
 
   
   }
-  
+  document.querySelector('.updatepost-form').addEventListener('submit', editFormHandler);  
