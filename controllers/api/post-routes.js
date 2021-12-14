@@ -80,14 +80,13 @@ router.post('/', withAuth, (req, res) => {
 
 //update post
 router.put('/:id', withAuth, (req, res) => {
-    console.log("Hit Edit Route");
-    console.log(req.body);
+    console.log(req.body)
 
     Post.update(
         {
             title: req.body.title,
-            content: req.body.content,
-            genre_id: req.body.genre    
+            content: req.body.contents,
+            //genre_id: req.body.genre_id      
         },
         { 
             where: {id: req.params.id}
