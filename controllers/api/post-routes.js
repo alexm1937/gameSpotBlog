@@ -80,8 +80,6 @@ router.post('/', withAuth, (req, res) => {
 
 //update post
 router.put('/:id', withAuth, (req, res) => {
-    console.log(req.body)
-
     Post.update(
         {
             title: req.body.title,
@@ -107,7 +105,6 @@ router.put('/:id', withAuth, (req, res) => {
 
 //delete post
 router.delete('/:id', withAuth, (req, res) => {
-    console.log("Hit Delete Route");
     Post.destroy({
       where: {
         id: req.params.id

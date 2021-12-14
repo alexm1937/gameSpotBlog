@@ -2,7 +2,6 @@ const forms = document.querySelector('.delete-event-container').addEventListener
 
 async function deleteFormHandler(event) {
 	event.preventDefault();
-    // console.log("Delete clicked")
     
     if (event.target.getAttribute('data-post-id')) {
         const id = event.target.getAttribute('data-post-id');
