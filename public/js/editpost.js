@@ -2,16 +2,16 @@
 //const genre = dropdown.querySelector('.genre')
 //dropdown.addEventListener('click', newDropdownHandler);
 
-async function newDropdownHandler(event) {
-    event.preventDefault();
+//async function newDropdownHandler(event) {
+    //event.preventDefault();
 
-    dropdown.setAttribute('class', 'dropdown is-active')
-    if(event.target.getAttribute('data-genre-id')) {
-        dropdown.setAttribute('class', 'dropdown')
-        genre.setAttribute('data-genre-id', event.target.getAttribute('data-genre-id'))
-        genre.textContent = event.target.textContent;
-    }
-}
+    //dropdown.setAttribute('class', 'dropdown is-active')
+    //if(event.target.getAttribute('data-genre-id')) {
+     //   dropdown.setAttribute('class', 'dropdown')
+     //   genre.setAttribute('data-genre-id', event.target.getAttribute('data-genre-id'))
+     //   genre.textContent = event.target.textContent;
+   // }
+//}
 
 async function editFormHandler(event) {
     event.preventDefault();
@@ -29,8 +29,7 @@ async function editFormHandler(event) {
       method: 'PUT',
       body: JSON.stringify({
         title,
-        content,
-        genre
+        contents
     }),
       headers: {
         'Content-Type': 'application/json'
@@ -48,4 +47,5 @@ async function editFormHandler(event) {
 
   
   }
+  document.querySelector('.updatepost-form').addEventListener('submit', editFormHandler);
   
